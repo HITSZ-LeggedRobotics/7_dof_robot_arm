@@ -1,0 +1,11 @@
+<launch>
+<include file="$(find visual_servo_test)/launch/xbox360joy.launch"/>
+
+<node name="servo_control_node" pkg="visual_servo_test" type="servo_control_node" />
+
+<node name="joy_command_adapter_node" pkg="visual_servo_test" type="joy_command_adapter_node" output="screen">
+    <param name="scale_linear" value="1.5"/>
+    <param name="scale_angular" value="1.5"/>
+</node>
+
+</launch>
