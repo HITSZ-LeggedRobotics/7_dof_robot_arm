@@ -52,10 +52,10 @@ int main(int argc, char **argv)
     ROS_INFO("get Ready");
     while(ros::ok())
     {
-        if(!resetFlag){
-            ROS_INFO("Wait For Reset");
-        }
-        else{
+        // if(!resetFlag){
+        //     ROS_INFO("Wait For Reset");
+        // }
+        // else{
             ROS_INFO("send joint command once");
             joint1ControllerCommandPub.publish(joint1);
             joint2ControllerCommandPub.publish(joint2);
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
             joint5ControllerCommandPub.publish(joint5);
             joint6ControllerCommandPub.publish(joint6);
             joint7ControllerCommandPub.publish(joint7);
-        }
+        // }
 
         ros::spinOnce();
         rate.sleep();
